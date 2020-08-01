@@ -1,2 +1,4 @@
 # Master_Thesis_C_Program
-This is the C Program of the demo application which I developed in my Master Thesis.
+In my master thesis, I had developed a demo application.
+It consists of two parts: C program and C++ Qt program.
+This repo includes the **C program**.
