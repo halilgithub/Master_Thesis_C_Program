@@ -18,16 +18,13 @@ It reads three kinds of data from the Bosch sensor BMP280; air pressure, tempera
 properly. Every 0.75 seconds, it receives a trivial message from linux side (Arm Dual Core A7) on Virtual UART0
 and sends the sensor data as answer back.
 On the other hand it inludes also first part of the logic for "Low Power" functionality in our demo application.
-The second part of the program is C++ Qt program which is executed on linux side. It is the user interface of the
+The second part of the demo application is C++ Qt program which is executed on linux side. It is the user interface of the
 whole demo application. It basically sends a trivial message to Arm Cortex M4 side and makes it send sensor data
-as answer back. Then it gets the sensor data and outputs them on the touch screen every 0.75 seconds.
-It includes also the second part of the logic for "Low Power".
+as answer back. Then it gets the sensor data over serial port by means of Qt libray module "QSerialPort" and outputs them on the touch screen every 0.75 seconds. It includes also the second part of the logic for "Low Power".
 
 Whenever the user presses the "Low Power" button on touch screen, C++ Qt program sends a "*delay" message to Arm Cortex M4
 and brings linux system to sleep (It actually brings Arm Dual Core A7 from CRun to CStop) by means of a bash script.
 After then, the touch screen goes off. This C++ Qt program source code can be found in the repo "Master_Thesis_Cpp_Program"
 
-On Arm Cortex M4 side, our C program receives this message over UART1 and triggers a trivial message which will be sent
-after 20 seconds for demonstration porpose. This message comes to the linux console on the other side and wakes the 
-system up. Then touch screen comes back and continues to output sensor data.
+On Arm Cortex M4 side, our C program receives this message over UART1 and triggers a trivial message which will be sent after 20 seconds for demonstration porpose. This message comes to the linux console on the other side and wakes the system up. Then touch screen comes back and C++ Qt program continues to output sensor data.
 
