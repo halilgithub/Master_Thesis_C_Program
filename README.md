@@ -26,5 +26,5 @@ Whenever the user presses the "Low Power" button on touch screen, C++ Qt program
 and brings linux system to sleep (It actually brings Arm Dual Core A7 from CRun to CStop) by means of a bash script.
 After then, the touch screen goes off. This C++ Qt program source code can be found in the repo "Master_Thesis_Cpp_Program"
 
-On Arm Cortex M4 side, our C program receives this message over UART1 and triggers a trivial message which will be sent after 20 seconds for demonstration porpose. This message comes to the linux console on the other side and wakes the system up. Then touch screen comes back and C++ Qt program continues to output sensor data.
+On Arm Cortex M4 side, our C program receives this message over UART1 and triggers a trivial message which will be sent  to linux side after 20 seconds for demonstration porpose. This message comes to the linux console on the other side and wakes the system up. Then touch screen comes back and C++ Qt program continues to output sensor data.
 
